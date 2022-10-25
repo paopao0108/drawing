@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <section class="tools-board">
+      <!-- 选择形状工具 -->
+      <div class="row">
+        <label for="" class="title">Shapes</label>
+        <ul class="options">
+          <li class="option tool" id="rectangle">
+            <img src="icons/rectangle.svg" alt="">
+            <span>Rectangle</span>
+          </li>
+          <li class="option tool" id="circle">
+            <img src="icons/circle.svg" alt="">
+            <span>Circle</span>
+          </li>
+          <li class="option tool" id="triangle">
+            <img src="icons/triangle.svg" alt="">
+            <span>Triangle</span>
+          </li>
+          <!-- 最后一个li：是否填充 -->
+          <li class="option">
+            <input type="checkbox" id="fill-color">
+            <label for="fill-color">Fill color</label>
+          </li>
+        </ul>
+      </div>
+      <!-- 选择 画笔、擦除、粗细 -->
+      <div class="row">
+        <label for="" class="title">Options</label>
+        <ul class="options">
+          <li class="option tool active" id="brush">
+            <img src="icons/brush.svg" alt="" srcset="">
+            <span>Brush</span>
+          </li>
+          <li class="option tool" id="eraser">
+            <img src="icons/eraser.svg" alt="" srcset="">
+            <span>Eraser</span>
+          </li>
+          <!-- 最后一个li：控制画笔粗细的滑条 -->
+          <li class="option">
+            <!-- 当input为range时，是滑条, 通过min和max来设置取值范围，默认0-100 -->
+            <input type="range" id="size-slider" min="1" max="30" value="5">
+          </li>
+        </ul>
+      </div>
+      <!-- 选择颜色 -->
+      <div class="row colors">
+        <label for="" class="title">Colors</label>
+        <ul class="options">
+          <li class="option"></li>
+          <li class="option selected" id="black"></li>
+          <li class="option"></li>
+          <li class="option"></li>
+          <!-- 最后一个li可以自定义颜色 -->
+          <li class="option">
+            <input type="color" id="color-picker" value="#4a98f7">
+          </li>
+        </ul>
+      </div>
+      <!-- 点击清空画板/保存画板图片 -->
+      <div class="row buttons">
+        <button class="clear-canvas">Clear Canvas</button>
+        <button class="save-img">Save As Image</button>
+      </div>
+
+    </section>
+    <section class="drawing-board">
+      <canvas></canvas>
+    </section>
+  </div>
+  <!-- defer: 外部js文件和当前html页面同时加载（异步加载），但只在当前页面解析完成之后执行js代码 -->
+  <script type="text/javascript" src="js/index.js" defer></script>
+</body>
+
+</html>
